@@ -15,13 +15,15 @@ for tmp in layer1:
     job_name = tmp.find("div", class_="sx2jih0 l3gun70 l3gun74 l3gun72")
     time = tmp.find("span", class_="sx2jih0 zcydq84u _18qlyvc0 _18qlyvc1y _18qlyvc1 _18qlyvc7")
     descs = tmp.find_all("span", class_="sx2jih0 zcydq84u _18qlyvc0 _18qlyvc1x _18qlyvc1 _1d0g9qk4 _18qlyvc8")
-
+    link = tmp.find("a", class_="_1hr6tkx5 _1hr6tkx8 _1hr6tkxb sx2jih0 sx2jihf zcydq8h")
     print(f"Company Name -> {company_name.text}\nLocation -> {location.text}\nJob -> {job_name.text}")
     print("Tasks / Benefits:")
     for desc in descs:
       print("- ", desc.text)
       
     print(time.text)
+    print("Link:")
+    print("https://https://www.jobstreet.co.id"+ link.get("href"))
     print()
   except:
     pass
